@@ -16,13 +16,13 @@ let word1 = "cattail";
 rotateRightTwo = dynamicCipher(2);
 rotateRightTwo(word1);
 console.log(rotateRightTwo(word1)); // "ecvvckn"
-// the output "ecvvckn" represents eeach character in the input string offset by two indexes to the RIGHT in the alphabet
+// the output "ecvvckn" represents each character in the input string offset by two indexes to the RIGHT in the alphabet
 
 let word2 = "egg";
 rotateLeftTwo = dynamicCipher(-2);
 rotateLeftTwo(word2);
 console.log(rotateLeftTwo(word2)); // "cee"
-// the output "cee" represents eeach character in the input string offset by two indexes to the LEFT in the alphabet
+// the output "cee" represents each character in the input string offset by two indexes to the LEFT in the alphabet
 ```
 ***********************************************************************/
 
