@@ -10,7 +10,7 @@ describe("thunderstorm()", function() {
     chai.spy.restore(global);
   });
 
-  it("should print out a rain event with a 200ms pause", function(done) {
+  it("Every event in the array should print something, then pause 200ms before the next event in the array is called", function(done) {
     let msecs = 200;
     this.timeout(msecs + 200);
 
@@ -32,7 +32,7 @@ describe("thunderstorm()", function() {
 
   });
 
-  it("should print out a lightning event with a 'FLASH!' followed by a 'BOOM!')", function(done) {
+  it("For lightning events, the FLASH! should be followed by a BOOM! 400ms later)", function(done) {
     let msecs = 400;
     this.timeout(msecs + 400);
 
@@ -55,7 +55,7 @@ describe("thunderstorm()", function() {
 
   });
 
-  it("should print out a storm event in the correct order", function(done) {
+  it("Longer storms should print in the correct order, with 200ms between each event in the array AND 400ms between each FLASH! and BOOM!", function(done) {
     let msecs = 1000;
     this.timeout(msecs + 400);
 
@@ -82,7 +82,5 @@ describe("thunderstorm()", function() {
     setConsoleLogSpy = chai.spy.on(console, "log");
 
     thunderstorm(stormEvents);
-
   });
-
 });
