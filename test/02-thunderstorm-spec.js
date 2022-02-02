@@ -14,7 +14,7 @@ describe("thunderstorm()", function() {
     let msecs = 200;
     this.timeout(msecs + 200);
 
-    stormEvents = ['rain'];
+    stormEvents = ['rain', 'rain'];
 
     let setIntervalSpy;
     let setConsoleLogSpy;
@@ -25,6 +25,7 @@ describe("thunderstorm()", function() {
 
       done();
     }, msecs + 100);
+    
     setIntervalSpy = chai.spy.on(global, "setTimeout");
     setConsoleLogSpy = chai.spy.on(console, "log");
 
@@ -40,14 +41,15 @@ describe("thunderstorm()", function() {
 
     let setIntervalSpy;
     let setConsoleLogSpy;
+
     setTimeout(function() {
       expect(setIntervalSpy).to.have.been.called.nth(1).with(400);
       expect(setConsoleLogSpy).to.have.been.called.nth(1).with("FLASH!");
-      expect(setIntervalSpy).to.have.been.called.nth(2).with(200);
       expect(setConsoleLogSpy).to.have.been.called.nth(2).with("BOOM!");
 
       done();
     }, msecs + 200);
+
     setIntervalSpy = chai.spy.on(global, "setTimeout");
     setConsoleLogSpy = chai.spy.on(console, "log");
 
@@ -63,6 +65,7 @@ describe("thunderstorm()", function() {
 
     let setIntervalSpy;
     let setConsoleLogSpy;
+
     setTimeout(function() {
       expect(setIntervalSpy).to.have.been.called.nth(1).with(400);
       expect(setConsoleLogSpy).to.have.been.called.nth(1).with("FLASH!");
@@ -73,11 +76,11 @@ describe("thunderstorm()", function() {
       expect(setIntervalSpy).to.have.been.called.nth(3).with(200);
       expect(setConsoleLogSpy).to.have.been.called.nth(3).with("BOOM!");
 
-      expect(setIntervalSpy).to.have.been.called.nth(4).with(200);
       expect(setConsoleLogSpy).to.have.been.called.nth(4).with("wind");
 
       done();
     }, msecs + 200);
+
     setIntervalSpy = chai.spy.on(global, "setTimeout");
     setConsoleLogSpy = chai.spy.on(console, "log");
 
