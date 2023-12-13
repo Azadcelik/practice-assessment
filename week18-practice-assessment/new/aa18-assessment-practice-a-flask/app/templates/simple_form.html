@@ -1,0 +1,9 @@
+
+
+<form method="post" action="/simple-form" enctype="multipart/form-data" >
+    {{form.csrf_token}}
+
+    <p>{{form.image.label}}: {{form.image}}</p>
+    <p>{{form.bio.label}}: {{form.bio}}</p>
+    <p>{{form.submit}}</p>
+</form>
